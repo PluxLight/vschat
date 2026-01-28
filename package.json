@@ -1,0 +1,70 @@
+{
+  "name": "vschat",
+  "displayName": "VSChat",
+  "description": "로컬 네트워크 채팅 Extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vschat.openChat",
+        "title": "VSChat: 채팅 열기",
+        "category": "VSChat",
+        "icon": "$(comment-discussion)"
+      },
+      {
+        "command": "vschat.startServer",
+        "title": "VSChat: 서버 시작",
+        "category": "VSChat",
+        "icon": "$(server)"
+      },
+      {
+        "command": "vschat.stopServer",
+        "title": "VSChat: 서버 중지",
+        "category": "VSChat",
+        "icon": "$(stop-circle)"
+      },
+      {
+        "command": "vschat.connectToServer",
+        "title": "VSChat: 서버에 연결",
+        "category": "VSChat",
+        "icon": "$(plug)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "vschat.openChat",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c"
+      },
+      {
+        "command": "vschat.startServer",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.74.0",
+    "@types/ws": "^8.5.10",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "ws": "^8.14.2"
+  }
+}
